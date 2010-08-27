@@ -1,0 +1,13 @@
+homepage:
+    pattern:  /
+    defaults: { _controller: SymfonyNewsBundle:News:index }
+
+about:
+    resource: StaticBundle/Resources/config/routing.yml
+
+
+internal:
+    resource: FrameworkBundle/Resources/config/routing/internal.xml
+
+news:
+    resource: SymfonyNewsBundle/Resources/config/routing.yml

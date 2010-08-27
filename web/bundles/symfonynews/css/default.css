@@ -1,0 +1,318 @@
+
+/*
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+*/
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #FAFAFA url(../images/img01.jpg) repeat-x left top;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    color: #000000;
+}
+
+h1, h2, h3 {
+    margin-top: 0;
+    color: #0153B4;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.6em;
+}
+
+h3 {
+    font-size: 1em;
+}
+
+a {
+    text-decoration: none;
+    color: #0153B4;
+}
+
+a img {
+    border: none;
+}
+
+img.left {
+    float: left;
+    margin: 0 20px 0 0;
+}
+
+img.right {
+    float: right;
+    margin: 0 0 0 20px;
+}
+
+/* ------- DEBUT - Clear ------- */
+
+.clear_fix:after
+{
+    content:".";
+    display:block;
+    height:0;
+    clear:both;
+    visibility:hidden;
+}
+.clear_fix
+{
+    display:inline-block;
+}
+/* \*/ * html .clear_fix
+{
+    height:1%;
+}
+.clear_fix
+{
+    display:block;
+}
+
+/* ------- FIN - Clear ------- */
+
+
+/* Header */
+
+#logo {
+    width: 972px;
+    height: 71px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+#logo h1, #logo p {
+    float: left;
+    margin: 0;
+    color: #FFFFFF;
+}
+
+#logo h1 {
+    padding: 10px 0 0 0;
+    font-weight: normal;
+    font-size: 3em;
+}
+
+#logo p {
+    text-transform: uppercase;
+    padding: 37px 0 0 3px;
+    font-size: 10px;
+    color: #FFFFFF;
+}
+
+#logo a {
+    border: none;
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+/* Menu */
+
+#menu {
+    width: 972px;
+    height: 52px;
+    margin: 0 auto;
+    padding-top: 7px;
+    background: url(../images/img02.jpg) no-repeat left top;
+}
+
+#menu ul {
+    margin: 0 0 0 20px;
+    padding: 0;
+    list-style: none;
+}
+
+#menu li {
+    display: block;
+    float: left;
+    border-left: 2px solid #FFFFFF;
+    line-height: 15px;
+    padding: 10px 15px 10px 10px;
+}
+
+#menu a {
+    border: none;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    color: #3F3F3F;
+
+
+}
+
+#menu .current_page_item a {
+    color: #000000;
+}
+
+/* Page */
+
+#page {
+    width: 972px;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+
+/* Content */
+
+
+
+.entry {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+}
+
+.entry h1 {
+    font-weight: normal;
+    font-size: 30px;
+}
+
+.entry h2 {
+    font-size: 13px;
+}
+
+.title {
+    margin: 0;
+    padding-bottom: 6px;
+    font-weight: normal;
+}
+
+.title a {
+    border-bottom: none;
+}
+
+.title a:hover {
+    border-bottom: 1px dashed #CCCCCC;
+}
+
+/* Footer */
+
+#footer {
+    border-top: 1px solid #C8C8C8;
+    height: 100px;
+}
+
+#footer p {
+    margin: 0;
+    padding: 40px 0 0 0;
+    text-align: center;
+    font-size: 11px;
+    color: #000000;
+}
+
+#footer a {
+    color: #000000;
+}
+
+#timeline,
+#planet
+{
+
+}
+
+.entry
+{
+    border-bottom: 1px solid #C8C8C8;
+}
+
+#timeline .entry
+{
+    clear: both;
+    margin: 5px 5px 20px;
+    min-height: 57px;
+}
+
+.entry a.profile_picture
+{
+    display:block;
+    float:left;
+    margin: 3px;
+}
+
+.entry p
+{
+    margin: 0;
+}
+
+.home #timeline,
+.home #planet
+{
+    float: left;
+    width: 476px;
+}
+
+.home #timeline
+{
+    margin-right: 10px;
+}
+
+#planet .entry
+{
+    margin-bottom: 5px;
+}
+
+#planet h2, #timeline h2, #slideshare h2
+{
+    padding-left: 35px;
+    line-height: 35px;
+    border-bottom: 1px solid #C8C8C8;
+}
+
+#planet h2
+{
+    background: url(../images/feed-icon.png) no-repeat top left;
+}
+
+#timeline h2
+{
+    background: url(../images/twitter-logo.png) no-repeat top left;
+}
+
+#slideshare h2
+{
+    background: url(../images/slideshare-logo.jpg) no-repeat top left;
+}
+
+#slideshare .entry a
+{
+    font-size: 14px;
+    position: relative;
+}
+
+#slideshare .entry a img {
+    float: left;
+    margin: 0 0.5em 0 0;
+}
+
+#slideshare .entry .stats {
+    line-height:1.1;
+    color: #C8C8C8;
+    margin-bottom: 5px;
+}
+
+#slideshare .entry .stats a {
+    font-size: 12px;
+}
+
+.home #slideshare .entry:first-child {
+    margin-left: 2px;
+}
+
+.home #slideshare .entry {
+    float: left;
+    width: 182px;
+    margin-left: 10px;
+    border-bottom: 0;
+}
+
+#github
+{
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 100;
+}
