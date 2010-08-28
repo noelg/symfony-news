@@ -17,7 +17,7 @@
         <!-- start header -->
         <div id="logo">
             <h1><a href="<?php echo $view['router']->generate('homepage') ?>">Symfony News</a></h1>
-            <p>Live information about the Symfony Framework</p>
+            <p>latest news about the symfony framework</p>
         </div>
 
         <div id="menu">
