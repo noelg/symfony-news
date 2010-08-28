@@ -4,8 +4,8 @@
 
 <div class="home">
     <div class="clear_fix">
-        <?php echo $view['actions']->render('SymfonyNewsBundle:News:twitter', array('limit' => 10, 'standalone' => true, )) ?>
-        <?php echo $view['actions']->render('SymfonyNewsBundle:News:planet', array('standalone' => true)) ?>
+        <?php echo $view['actions']->render('SymfonyNewsBundle:News:twitter', array('limit' => 10, 'standalone' => true)) ?>
+        <?php echo $view['actions']->render('SymfonyNewsBundle:News:planet', array('limit' => 10)) ?>
     </div>
-    <?php echo $view['actions']->render('SymfonyNewsBundle:News:slideshare', array('standalone' => true)) ?>
+    <?php echo $view['actions']->render('SymfonyNewsBundle:News:slideshare') ?>
 </div>

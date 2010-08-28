@@ -4,13 +4,13 @@ news_index:
 
 news_twitter:
   pattern: /twitter
-  defaults: { _controller: SymfonyNewsBundle:News:twitter, limit: 50 }
+  defaults: { _controller: SymfonyNewsBundle:News:twitter, limit: 50, standalone: false }
 
 news_planet:
   pattern: /planet
-  defaults: { _controller: SymfonyNewsBundle:News:planet, limit: 50 }
+  defaults: { _controller: SymfonyNewsBundle:News:planet, limit: 50, standalone: false }
 
 
 news_slideshare:
   pattern: /slideshare
-  defaults: { _controller: SymfonyNewsBundle:News:slideshare, limit: 30 }
+  defaults: { _controller: SymfonyNewsBundle:News:slideshare, limit: 30, standalone: false }

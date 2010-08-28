@@ -16,10 +16,8 @@ class NewsController extends Controller {
         return $this->render('SymfonyNewsBundle:News:index', array(), $response);
     }
 
-    public function twitterAction($limit = 10) {
+    public function twitterAction($limit = 10, $standalone = true) {
         $feed  = new \SimpleXmlElement($this->getTwitterSearch());
-        $feed->registerXPathNamespace('media', 'http://search.yahoo.com/mrss/');
-
         $items = $feed->xpath(sprintf('//channel/item[position() <= %d]', $limit));
 
         $response = $this->createResponse();
@@ -27,7 +25,7 @@ class NewsController extends Controller {
         $response->setClientTtl(60);
         $response->setTtl(60);
 
-        return $this->render('SymfonyNewsBundle:News:twitter', array('items' => $items, 'standalone' => (10 === $limit)), $response);
+        return $this->render('SymfonyNewsBundle:News:twitter', array('items' => $items, 'standalone' => $standalone), $response);
     }
 
     public function twitterRssAction() {
@@ -38,15 +36,16 @@ class NewsController extends Controller {
         return $response;
     }
 
-    public function planetAction($limit = 10) {
-        $response = $this->createResponse();
-        $response->setSharedMaxAge(1800);
-        $response->setClientTtl(1800);
-
+    public function planetAction($limit = 10, $standalone = true) {
         $feed = new \SimpleXmlElement($this->getPlanetFeed());
         $items = $feed->xpath(sprintf('//channel/item[position() <= %d]', $limit));
 
-        return $this->render('SymfonyNewsBundle:News:planet', array('items' => $items, 'limit' => $limit, 'standalone' => (10 === $limit)), $response);
+        $response = $this->createResponse();
+        $response->setSharedMaxAge(1800);
+        $response->setClientTtl(1800);
+        $response->setTtl(1800);
+
+        return $this->render('SymfonyNewsBundle:News:planet', array('items' => $items, 'standalone' => $standalone), $response);
     }
 
     public function planetFeedAction() {
@@ -59,7 +58,7 @@ class NewsController extends Controller {
     }
 
 
-    public function slideshareAction($limit = 5) {
+    public function slideshareAction($limit = 5, $standalone = true) {
         $response = $this->createResponse();
         $response->setSharedMaxAge(10800);
         $response->setClientTtl(10800);
@@ -68,7 +67,7 @@ class NewsController extends Controller {
         $feed = new \SimpleXmlElement($this->getSlideshareSearch());
         $items = $feed->xpath(sprintf('//Tag/Slideshow[position() <= %d]', $limit));
 
-        return $this->render('SymfonyNewsBundle:News:slideshare', array('items' => $items, 'limit' => $limit, 'standalone' => (5 === $limit)), $response);
+        return $this->render('SymfonyNewsBundle:News:slideshare', array('items' => $items, 'limit' => $limit, 'standalone' => $standalone), $response);
     }
 
     public function slideshareXmlAction() {
