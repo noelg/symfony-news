@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://www.symfony-project.org/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.symfony-project.org/schema/dic/services http://www.symfony-project.org/schema/dic/services/services-1.0.xsd">
+
+  <parameters>
+    <parameter key="news.twitter.class">Zend\Http\Client</parameter>
+    <parameter key="news.twitter.adapter">Zend\Http\Client\Adapter\Socket</parameter>
+    <parameter key="news.twitter.url"></parameter>
+    <parameter key="news.twitter.search_query">null</parameter>
+    <parameter key="news.twitter.rpp">50</parameter>
+  </parameters>
+
+  <services>
+    <service id="twitter" class="%news.twitter.class%">
+      <call method="setUri">
+        <argument key="uri">%news.twitter.url%</argument>
+      </call>
+      <call method="setConfig">
+        <argument type="collection">
+            <argument key="adapter">%news.twitter.adapter%</argument>
+            <argument key="maxredirects">0</argument>
+            <argument key="timeout">30</argument>
+        </argument>
+      </call>
+      <call method="setMethod">
+        <argument key="method">GET</argument>
+      </call>
+      
+      <call method="setParameterGet">
+        <argument type="collection">
+            <argument key="q">%news.twitter.search_query%</argument>
+            <argument key="rpp">%news.twitter.rpp%</argument>
+        </argument>
+      </call>
+    </service>
+  </services>
+
+</container>
+

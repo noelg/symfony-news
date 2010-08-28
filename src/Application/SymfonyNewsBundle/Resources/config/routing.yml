@@ -1,0 +1,16 @@
+news_index:
+  pattern:  /
+  defaults: { _controller: SymfonyNewsBundle:News:index }
+
+news_twitter:
+  pattern: /twitter
+  defaults: { _controller: SymfonyNewsBundle:News:twitter, limit: 50 }
+
+news_planet:
+  pattern: /planet
+  defaults: { _controller: SymfonyNewsBundle:News:planet, limit: 50 }
+
+
+news_slideshare:
+  pattern: /slideshare
+  defaults: { _controller: SymfonyNewsBundle:News:slideshare, limit: 30 }

@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://www.symfony-project.org/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.symfony-project.org/schema/dic/services http://www.symfony-project.org/schema/dic/services/services-1.0.xsd">
+
+  <parameters>
+    <parameter key="news.planet.class">Zend\Http\Client</parameter>
+    <parameter key="news.planet.adapter">Zend\Http\Client\Adapter\Socket</parameter>
+    <parameter key="news.planet.url"></parameter>
+    <parameter key="news.planet."></parameter>
+  </parameters>
+
+  <services>
+    <service id="planet" class="%news.planet.class%">
+      <call method="setUri">
+        <argument key="uri">%news.planet.url%</argument>
+      </call>
+      <call method="setConfig">
+        <argument type="collection">
+            <argument key="adapter">%news.planet.adapter%</argument>
+            <argument key="maxredirects">0</argument>
+            <argument key="timeout">30</argument>
+        </argument>
+      </call>
+      <call method="setMethod">
+        <argument key="method">GET</argument>
+      </call>
+    </service>
+  </services>
+</container>
+

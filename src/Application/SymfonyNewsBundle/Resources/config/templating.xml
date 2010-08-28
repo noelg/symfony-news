@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://www.symfony-project.org/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.symfony-project.org/schema/dic/services http://www.symfony-project.org/schema/dic/services/services-1.0.xsd">
+
+  <parameters>
+    <parameter key="templating.helper.text.class">Application\SymfonyNewsBundle\Templating\Helper\TextHelper</parameter>
+  </parameters>
+
+  <services>
+    <service id="templating.helper.text" class="%templating.helper.text.class%">
+      <tag name="templating.helper" alias="text" />
+      <argument type="service" id="templating.helper.text" />
+    </service>
+  </services>
+
+</container>
