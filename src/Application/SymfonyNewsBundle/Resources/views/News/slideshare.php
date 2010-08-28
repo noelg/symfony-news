@@ -15,7 +15,7 @@
     </a>
 
     <p class="stats">
-      from <a href="http://www.slideshare.com/<?php echo $item->Username ?>"><?php echo $item->Username ?></a>, posted the <?php echo $item->Created ?>
+      from <a href="http://www.slideshare.com/<?php echo $item->Username ?>"><?php echo $item->Username ?></a>, <?php echo date('d/m/Y H:i:s', strtotime((string) $item->Created)); ?>
     </p>
 
     <p class="description">

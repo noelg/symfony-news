@@ -281,9 +281,9 @@ img.right {
     margin: 0 0.5em 0 0;
 }
 
-#slideshare .entry .stats {
+.entry .stats {
     line-height:1.1;
-    color: #C8C8C8;
+    color: #787878;
     margin-bottom: 5px;
 }
 

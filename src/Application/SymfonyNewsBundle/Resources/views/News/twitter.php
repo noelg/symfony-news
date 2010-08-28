@@ -21,8 +21,8 @@
         <?php echo $view['text']->unescape($item->description) ?>
       </span>
     </p>
-    <p>
-      <?php echo $item->pubDate ?>
+    <p class="stats">
+      <?php echo date('d/m/Y H:i:s', strtotime((string) $item->pubDate)) ?>
     </p>
   </div>
   <?php endforeach ?>

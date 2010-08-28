@@ -13,6 +13,11 @@
               <a href="<?php echo $item->link ?>">
                 <?php echo $item->title ?>
               </a>
+              <p class="stats">
+                <?php if ((string) $item->author): ?>
+                  By <a href="<?php echo $item->link ?>"><?php echo $item->author?>,</a>
+                <?php endif ?>
+                <?php echo date('d/m/Y H:i:s', strtotime((string) $item->pubDate)) ?></p>
           </h3>
         <p>
           <?php echo $view['text']->truncateText($item->description, 250) ?>
