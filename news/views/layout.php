@@ -26,7 +26,6 @@
                 <li<?php echo $view['slots']->get('current_page') == 'planet' ? ' class="current_page_item"' : '' ?>><a href="<?php echo $view['router']->generate('news_planet') ?>">Blogs</a></li>
                 <li<?php echo $view['slots']->get('current_page') == 'twitter' ? ' class="current_page_item"' : '' ?>><a href="<?php echo $view['router']->generate('news_twitter') ?>">Twitter</a></li>
                 <li<?php echo $view['slots']->get('current_page') == 'slideshare' ? ' class="current_page_item"' : '' ?>><a href="<?php echo $view['router']->generate('news_slideshare') ?>">Slideshare uploads</a></li>
-                <li<?php echo $view['slots']->get('current_page') == 'about' ? ' class="current_page_item"' : '' ?>><a href="<?php echo $view['router']->generate('about') ?>">About</a></li>
             </ul>
         </div>
         <!-- end header -->
@@ -43,7 +42,7 @@
             <!-- end page -->
         </div>
         <div id="footer">
-            <p>Powered by <a href="http://symfony-reloaded.org/" target="_blank">Symfony 2</a>.</p>
+            <p>Powered by <a href="http://symfony-reloaded.org/" target="_blank">Symfony 2</a>, <a href="http://twitter.com">Twitter API</a>, <a href="http://slideshare.net/">Slideshare API</a> and <a href="http://pipes.yahoo.com/noelguilbert/symfony">Yahoo! Pipes</a>. &copy; Copyright <a href="http://www.noelguilbert.com">Noël GUILBERT</a> 2010</p>
         </div>
     </body>
 </html>
