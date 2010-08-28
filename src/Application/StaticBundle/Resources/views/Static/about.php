@@ -1,5 +1,6 @@
 <?php $view->extend('::layout') ?>
 <?php $view['stylesheets']->add('bundles/symfonynews/css/default.css') ?>
+<?php $view['slots']->set('title', 'About Symfony News') ?>
 
 <div id="about_page">
     <h1>What's Symfony News ?</h1>

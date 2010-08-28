@@ -2,6 +2,7 @@
     <?php $view->extend('::layout') ?>
     <?php $view['stylesheets']->add('bundles/symfonynews/css/default.css') ?>
     <?php $view['slots']->set('current_page', 'slideshare') ?>
+    <?php $view['slots']->set('title', 'Latest slideshare uploads tagged symfony | Symfony News') ?>
 <?php endif ?>
 
 <div id="slideshare" class="clear_fix">
