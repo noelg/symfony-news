@@ -8,11 +8,24 @@ use Symfony\Components\DependencyInjection\ContainerBuilder;
 
 class NewsExtension extends Extension {
     protected $resources = array(
+            'config'     => 'config.xml',
             'planet'     => 'planet.xml',
             'twitter'    => 'twitter.xml',
             'slideshare' => 'slideshare.xml',
             'templating' => 'templating.xml',
     );
+
+    protected function configLoad($config, ContainerBuilder $container) {
+        if (!$container->hasDefinition('news.config')) {
+            $loader = new XmlFileLoader($container, __DIR__.'/../Resources/config');
+            $loader->load($this->resources['config']);
+        }
+
+        if (isset($config['cache']) && $config['cache']) {
+            $container->setParameter('zend.cache.class', 'Zend\\Cache\\Backend\\File');
+        }
+
+    }
 
     public function planetLoad($config, ContainerBuilder $container) {
 

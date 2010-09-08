@@ -5,14 +5,18 @@
     xsi:schemaLocation="http://www.symfony-project.org/schema/dic/services http://www.symfony-project.org/schema/dic/services/services-1.0.xsd">
 
   <parameters>
-    <parameter key="news.planet.class">Zend\Http\Client</parameter>
+    <parameter key="news.planet.class">Application\SymfonyNewsBundle\Service\Rss</parameter>
+    <parameter key="news.planet.client.class">Zend\Http\Client</parameter>
     <parameter key="news.planet.adapter">Zend\Http\Client\Adapter\Socket</parameter>
     <parameter key="news.planet.url"></parameter>
-    <parameter key="news.planet."></parameter>
   </parameters>
 
   <services>
     <service id="planet" class="%news.planet.class%">
+      <argument type="service" id="planet.client" />
+      <argument type="service" id="zend.cache" on-invalid="ignore" />
+    </service>
+    <service id="planet.client" class="%news.planet.client.class%">
       <call method="setUri">
         <argument key="uri">%news.planet.url%</argument>
       </call>

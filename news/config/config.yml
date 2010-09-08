@@ -19,11 +19,12 @@ news.twitter:
 news.slideshare:
     url:          http://www.slideshare.net/api/2/get_slideshows_by_tag
     search_query: symfony
-    api_key:      MYAPIKEY
-    api_secret:   MYAPISECRET
+    api_key:      u0Md0AsH
+    api_secret:   BPBjRgKA
 
 news.templating: ~
-
+news.config:
+  cache: true
 
 
 #assets_version: SomeVersionScheme

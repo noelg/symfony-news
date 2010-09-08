@@ -5,7 +5,8 @@
     xsi:schemaLocation="http://www.symfony-project.org/schema/dic/services http://www.symfony-project.org/schema/dic/services/services-1.0.xsd">
 
   <parameters>
-    <parameter key="news.slideshare.class">Zend\Http\Client</parameter>
+    <parameter key="news.slideshare.class">Application\SymfonyNewsBundle\Service\SlideShare</parameter>
+    <parameter key="news.slideshare.client.class">Zend\Http\Client</parameter>
     <parameter key="news.slideshare.adapter">Zend\Http\Client\Adapter\Socket</parameter>
     <parameter key="news.slideshare.url">http://www.slideshare.net/api/2/search_slideshows</parameter>
     <parameter key="news.slideshare.api_key"></parameter>
@@ -15,6 +16,13 @@
 
   <services>
     <service id="slideshare" class="%news.slideshare.class%">
+        <argument type="service" id="slideshare.client" />
+        <argument type="service" id="zend.cache" on-invalid="ignore" />
+        <call method="setSecret">
+            <argument key="secret">%news.slideshare.api_secret%</argument>
+        </call>
+    </service>
+    <service id="slideshare.client" class="%news.slideshare.client.class%">
       <call method="setUri">
         <argument key="uri">%news.slideshare.url%</argument>
       </call>
