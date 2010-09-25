@@ -34,7 +34,7 @@ abstract class BaseService
 
     protected function getCacheKey()
     {
-        return sha1(get_class($this).'_service');
+        return sha1($this->client->getUri());
     }
 
     protected function doRequest()
